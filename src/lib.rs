@@ -46,7 +46,7 @@ impl Worker {
     let thread = thread::spawn(move || {
       while let Ok(job) = receiver.lock().unwrap().recv() {
 
-      println!("Worker {id} got a job; executing.");
+      println!("Worker {} got a job; executing.", id);
       job();
       }
     });
